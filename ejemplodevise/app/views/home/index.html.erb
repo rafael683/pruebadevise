@@ -1,0 +1,14 @@
+<h1>Inicio</h1>
+<p></p>
+<div class="container"></div>
+<h1 class="jumbotron-heading"></h1>
+<% if current_user %>
+  <%= current_user.email %>.
+ <% end %>
+
+ <% if current_user %>
+   <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
+ <% else %>
+   <%= link_to 'Iniciar sesión', new_user_session_path %>
+   <%= link_to 'Registrarse', new_user_registration_path %>
+ <% end %>
